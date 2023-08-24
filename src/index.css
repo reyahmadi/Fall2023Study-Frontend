@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.login-card {
+  margin-top: 100px;
+}
+
+.grade-card{
+  padding: 10px 10px 10px 10px !important;
+  text-align: center;
+
+}
+
+.you-grade-card{
+  padding: 10px 10px 10px 10px !important;
+  text-align: center;
+}
+
+.statistics-card{
+  margin: 30px 10px 20px 10px !important;
+}
