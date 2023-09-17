@@ -36,7 +36,16 @@ function Dashboard(props){
             assignment={state.assignment}
         /> :
         <>
-            <Grid  container /*justifyContent="center"*/ spacing={2}>
+         <Card style={{margin: '20px'}} sx={{ minWidth: 275 }}>
+           <CardContent>
+            <Grid  container justifyContent="center" spacing={2}>
+            <Grid item xs={12}>
+                <Typography  variant='h4'>
+                    Assignment: {state.assignment}
+                    <hr/>
+
+                </Typography>
+            </Grid>
             <Grid item xs={12} md={6} lg={3}>
             <Grid container>
             <Grid item className="grade-card" xs={12} md={6} lg={1}>
@@ -77,11 +86,17 @@ function Dashboard(props){
             )}
 
             </Grid>
-
+            <Button 
+            className='q-button' 
+            variant="contained"
+            href='https://www.surveymonkey.ca/r/G9VWXKQ'
+            >
+                Take me to questionnaires!
+            </Button>
             </Grid>
             </Grid>
-            
-
+        </CardContent>
+        </Card>
         </>
     )
 }

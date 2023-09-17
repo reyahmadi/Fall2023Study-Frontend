@@ -24,7 +24,7 @@ function ControlDashboard(props){
                 <Card className="statistics-card" sx={{ minWidth: 275 }}>
                         <CardContent>
                             <Typography variant='h4'>
-                                {props.assignment}
+                                Assignment: {props.assignment}
                             </Typography>
                             <hr/>
 
@@ -49,6 +49,13 @@ function ControlDashboard(props){
                             <Grid item lg={9} xs={12}>
                             <BoxPlot data={props.grades} you={props.you}/>
                             </Grid>
+                            <Button 
+            className='q-button' 
+            variant="contained"
+            href='https://www.surveymonkey.ca/r/G9VWXKQ'
+            >
+                Take me to questionnaires!
+            </Button>
                             </Grid>
                         </CardContent>
                     </Card>

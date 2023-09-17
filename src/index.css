@@ -30,3 +30,11 @@ code {
 .statistics-card{
   margin: 30px 10px 20px 10px !important;
 }
+
+.q-button{
+  float: right;
+}
+
+.assignment{
+  margin-left: 50px;
+}
