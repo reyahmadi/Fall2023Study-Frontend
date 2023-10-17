@@ -27,7 +27,7 @@ function Login(props){
       .then(res => {
         console.log(res)
         if(res && res.data.loggedIn){
-            props.setStudentNumber(10)
+            props.setStudentNumber(input)
             navigate(
               "/dashboard", 
               {state: 

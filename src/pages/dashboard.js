@@ -13,6 +13,7 @@ import CircleRating from '../components/circle-rating';
 import BoxPlot from '../components/boxplot'
 import { useLocation } from 'react-router-dom';
 import ControlDashboard from './control-dashboard';
+import baseURL from '../variables';
 
 function Dashboard(props){
     const studentNumber = useContext(StudentNumber)
@@ -28,6 +29,16 @@ function Dashboard(props){
             setPeers(state.peers);
         }
     }, [state])
+
+    const questionnaireClicked = () => {
+        axios.post(baseURL+'/exit', {student_number: studentNumber}, 
+            {headers : {"Access-Control-Allow-Origin": "*"}})
+            .then(res => {
+              console.log(res)
+            })
+            .catch(err => console.log(err))
+    }
+
     return(
         state.group === "control" ? 
         <ControlDashboard 
@@ -36,19 +47,20 @@ function Dashboard(props){
             assignment={state.assignment}
         /> :
         <>
-         <Card style={{margin: '20px'}} sx={{ minWidth: 275 }}>
+         <Card sx={{ minWidth: 250 }} style={{boxShadow: 'none'}}>
            <CardContent>
-            <Grid  container justifyContent="center" spacing={2}>
-            <Grid item xs={12}>
-                <Typography  variant='h4'>
-                    Assignment: {state.assignment}
-                    <hr/>
-
+            {/* <Grid  container justifyContent="center" spacing={2}> */}
+            {/* <Grid item xs={12} md={12} lg={12}> */}
+            <Grid justifyContent="center" container>
+            <Grid item xs={4} md={4} lg={4}>
+                <Typography variant='h4'>
+                    Assignment:
+                </Typography>
+                <Typography variant='h5'>
+                    {state.assignment}
                 </Typography>
             </Grid>
-            <Grid item xs={12} md={6} lg={3}>
-            <Grid container>
-            <Grid item className="grade-card" xs={12} md={6} lg={1}>
+            <Grid item className="grade-card" xs={4} md={4} lg={4}>
                 <Card sx={{ minWidth: 275 }}>
                     <CardContent>
                         <Typography variant="h5" gutterBottom>
@@ -62,15 +74,17 @@ function Dashboard(props){
                     </CardContent>
                 </Card>
             </Grid>
-            </Grid>
-            </Grid>
+            <Grid item xs={4}>
 
-            <Grid item xs={12} md={6} lg={8}>
-            
+            </Grid>
+            </Grid>
+            {/* </Grid> */}
+            {/* </Grid> */}
+            <br/>
             <Grid container>
             {peers.map((row, i) => 
-            <Grid className='grade-card' item xs={12} md={6} lg={4}>
-                <Card sx={{ minWidth: 275 }}>
+            <Grid className='grade-card' item xs={12} md={4} lg={4}>
+                <Card sx={{ minWidth: 250 }} style={{marginRight: "5px", marginBottom: "5px"}}>
                     <CardContent>
                         <Typography variant="h5" gutterBottom>
                             Student {row.i}
@@ -84,17 +98,20 @@ function Dashboard(props){
                 </Card>
             </Grid>
             )}
-
             </Grid>
+            <br/>
+
             <Button 
             className='q-button' 
             variant="contained"
+            target="_blank"
             href='https://www.surveymonkey.ca/r/G9VWXKQ'
+            onClick={questionnaireClicked}
             >
                 Take me to questionnaires!
             </Button>
-            </Grid>
-            </Grid>
+            {/* </Grid>
+            </Grid> */}
         </CardContent>
         </Card>
         </>
