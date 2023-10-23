@@ -46,7 +46,11 @@ const BoxPlot = (props) => {
     },
     {
       type: 'line',
-      data: [props.you]} 
+      data: [props.you],
+      marker: {
+        radius: 8
+      }
+    } ,
     ]
     })
   }, [props.data])

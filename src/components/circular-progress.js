@@ -7,8 +7,8 @@ import Box from '@mui/material/Box';
 
 function CircularProgressWithLabel(props) {
   return (
-    <Box sx={{ position: 'relative', display: 'inline-flex' }}>
-      <CircularProgress size={60} variant="determinate" {...props} />
+    <Box sx={{ position: 'relative', display: 'inline-flex'}}>
+      <CircularProgress size={60} color="inherit" variant="determinate" {...props} />
       <Box
         sx={{
           top: 0,
@@ -21,11 +21,9 @@ function CircularProgressWithLabel(props) {
           justifyContent: 'center',
         }}
       >
-        <Typography
-          variant="caption"
-          component="div"
-          color="text.secondary"
-        >{`${Math.round(props.value)}%`}</Typography>
+        <strong
+          className='font-20 bold'
+        >{`${Math.round(props.value)}%`}</strong>
       </Box>
     </Box>
   );

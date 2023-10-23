@@ -45,6 +45,8 @@ function Dashboard(props){
             grades={state.grades} 
             you={state.you}
             assignment={state.assignment}
+            hasVisited={state.hasVisited}
+            questionnaireClicked={questionnaireClicked}
         /> :
         <>
          <Card sx={{ minWidth: 250 }} style={{boxShadow: 'none'}}>
@@ -62,13 +64,13 @@ function Dashboard(props){
             </Grid>
             <Grid item className="grade-card" xs={4} md={4} lg={4}>
                 <Card sx={{ minWidth: 275 }}>
-                    <CardContent>
-                        <Typography variant="h5" gutterBottom>
-                            You
+                    <CardContent className='grade-content'>
+                        <Typography gutterBottom>
+                            Your Grade
                         </Typography>
                         <CircularProgressWithLabel value={you?.grade} />
-                        <Typography variant="h6" gutterBottom>
-                            Time spent: {you?.time}h
+                        <Typography gutterBottom>
+                            Time spent: <strong className='font-20'>{you?.time}h</strong>
                         </Typography>
                         {/* <CircleRating /> */}
                     </CardContent>
@@ -81,17 +83,19 @@ function Dashboard(props){
             {/* </Grid> */}
             {/* </Grid> */}
             <br/>
+            <div style={{fontSize: '20px'}}>Performance of your peers:</div> 
+            <br/>
             <Grid container>
             {peers.map((row, i) => 
             <Grid className='grade-card' item xs={12} md={4} lg={4}>
                 <Card sx={{ minWidth: 250 }} style={{marginRight: "5px", marginBottom: "5px"}}>
-                    <CardContent>
-                        <Typography variant="h5" gutterBottom>
-                            Student {row.i}
+                    <CardContent class="grade-content">
+                        <Typography gutterBottom>
+                            Student {i+1}
                         </Typography>
                         <CircularProgressWithLabel value={row.grade} />
-                        <Typography variant="h6" gutterBottom>
-                            Time spent: {row.time}h
+                        <Typography className='margin-top' gutterBottom>
+                            Time spent: <strong className='font-20'>{row?.time}h</strong>
                         </Typography>
                         {/* <CircleRating /> */}
                     </CardContent>
@@ -99,16 +103,15 @@ function Dashboard(props){
             </Grid>
             )}
             </Grid>
-            <br/>
 
             <Button 
             className='q-button' 
             variant="contained"
-            target="_blank"
-            href='https://www.surveymonkey.ca/r/G9VWXKQ'
+            target={state.hasVisited ? '' : "_blank"}
+            href={state.hasVisited ? '/' : 'https://www.surveymonkey.ca/r/G9VWXKQ'}
             onClick={questionnaireClicked}
             >
-                Take me to questionnaires!
+                {state.hasVisited ? 'Exit' : 'Take me to questionnaires!'}
             </Button>
             {/* </Grid>
             </Grid> */}

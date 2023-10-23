@@ -36,7 +36,8 @@ function Login(props){
                   assignment: res.data.assignment_name,
                   you: res.data.your_perf, 
                   peers: res.data.peers, 
-                  grades: res.data.grades}})
+                  grades: res.data.grades,
+                  hasVisited: res.data.hasVisited}})
 
         }
         else{

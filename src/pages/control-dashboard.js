@@ -50,12 +50,14 @@ function ControlDashboard(props){
                             <BoxPlot data={props.grades} you={props.you}/>
                             </Grid>
                             <Button 
-            className='q-button' 
-            variant="contained"
-            href='https://www.surveymonkey.ca/r/G9VWXKQ'
-            >
-                Take me to questionnaires!
-            </Button>
+                            className='q-button' 
+                            variant="contained"
+                            target={props.hasVisited ? '' : "_blank"}
+                            href={props.hasVisited ? '/' : 'https://www.surveymonkey.ca/r/G9VWXKQ'}
+                            onClick={props.questionnaireClicked}
+                            >
+                                {props.hasVisited ? 'Exit' : 'Take me to questionnaires!'}
+                            </Button>
                             </Grid>
                         </CardContent>
                     </Card>
