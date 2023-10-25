@@ -20,6 +20,7 @@ function Dashboard(props){
     const { state } = useLocation();
     const [peers, setPeers] = useState([]);
     const [you, setYou] = useState({});
+    const [now,setNow] = useState(new Date());
 
 
     useEffect(() => {
@@ -52,8 +53,6 @@ function Dashboard(props){
         <>
          <Card sx={{ minWidth: 250 }} style={{boxShadow: 'none'}}>
            <CardContent>
-            {/* <Grid  container justifyContent="center" spacing={2}> */}
-            {/* <Grid item xs={12} md={12} lg={12}> */}
             <Grid justifyContent="center" container>
             <Grid item xs={4} md={4} lg={4}>
                 <Typography variant='h5'>
@@ -75,7 +74,7 @@ function Dashboard(props){
                 </Card>
             </Grid>
             <Grid item xs={4}>
-
+                <p style={{float: "right"}}>{now.toLocaleString()}</p>
             </Grid>
             </Grid>
             {/* </Grid> */}
