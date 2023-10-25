@@ -40,7 +40,8 @@ function Dashboard(props){
     }
 
     return(
-        state.group === "control" ? 
+        <div style={{maxWidth: "1200px"}}>
+        {state.group === "control" ? 
         <ControlDashboard 
             grades={state.grades} 
             you={state.you}
@@ -55,9 +56,6 @@ function Dashboard(props){
             {/* <Grid item xs={12} md={12} lg={12}> */}
             <Grid justifyContent="center" container>
             <Grid item xs={4} md={4} lg={4}>
-                <Typography variant='h4'>
-                    Assignment:
-                </Typography>
                 <Typography variant='h5'>
                     {state.assignment}
                 </Typography>
@@ -118,7 +116,9 @@ function Dashboard(props){
         </CardContent>
         </Card>
         </>
-    )
+        }
+        </div>
+        )
 }
 
 export default Dashboard;
