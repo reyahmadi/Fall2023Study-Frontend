@@ -54,3 +54,8 @@ code {
 .bold{
   font-weight: bold;
 }
+
+.small-message{
+  padding: 10px;
+  text-align: center;
+}
