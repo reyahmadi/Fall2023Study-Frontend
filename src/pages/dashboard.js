@@ -46,6 +46,7 @@ function Dashboard(props){
         <ControlDashboard 
             grades={state.grades} 
             you={state.you}
+            class={state.class}
             assignment={state.assignment}
             hasVisited={state.hasVisited}
             questionnaireClicked={questionnaireClicked}
@@ -105,7 +106,7 @@ function Dashboard(props){
             className='q-button' 
             variant="contained"
             target={state.hasVisited ? '' : "_blank"}
-            href={state.hasVisited ? '/' : 'https://www.surveymonkey.ca/r/G9VWXKQ'}
+            href={state.hasVisited ? '/' : state.class == '167' ? 'https://www.surveymonkey.ca/r/G9VWXKQ' : 'https://www.surveymonkey.ca/r/BGBGFN8'}
             onClick={questionnaireClicked}
             >
                 {state.hasVisited ? 'Exit' : 'Take me to questionnaires!'}
