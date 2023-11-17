@@ -17,18 +17,53 @@ import baseURL from '../variables';
 
 function Dashboard(props){
     const blacklist = [
-        "301543692",
+        "301173911",
+        "301545941",
+        "301449627",
+        "301548552",
+        "301543957",
+        "301546390",
+        "301542661",
+        "301541927",
+        "301545941",
+        "301550350",
+        "301559855",
         "301604458",
-        "301563520",
-        "301545962",
-        "301477523",
-        "301397180",
         "301417388",
         "301539864",
-        "301541572",
-        "301469886",
+        "301541657",
+        "301544617",
+        "301571150",
         "301568596",
-        "301541657"
+        "301542040",
+        "301426553",
+        "301401741",
+        "301571105",
+        "301557510",
+        "301400943",
+        "301554380",
+        "301477523",
+        "301417433",
+        "301249592",
+        "301549386",
+        "301543692",
+        "301422377",
+        "301403621",
+        "301541572",
+        "301436414",
+        "301575523",
+        "301467627",
+        "301294427",
+        "301588808",
+        "301469886",
+        "301465651",
+        "301564244",
+        "301397180",
+        "301431734",
+        "301425515",
+        "301545962",
+        "301563520",
+        "301540260"
     ];
     const studentNumber = useContext(StudentNumber)
     const { state } = useLocation();
@@ -66,7 +101,8 @@ function Dashboard(props){
             questionnaireClicked={questionnaireClicked}
         /> :
         blacklist.includes(state.student_number) ?
-        <h5 className='small-message'>Please see the dashboard in the lab.</h5>
+        <h5 className='small-message'>You still cannot see your grades for A3. 
+        We will let you know when the dashboard is ready.</h5>
         :
         <>
          <Card sx={{ minWidth: 250 }} style={{boxShadow: 'none'}}>
