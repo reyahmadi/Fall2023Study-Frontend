@@ -16,6 +16,20 @@ import ControlDashboard from './control-dashboard';
 import baseURL from '../variables';
 
 function Dashboard(props){
+    const blacklist = [
+        "301543692",
+        "301604458",
+        "301563520",
+        "301545962",
+        "301477523",
+        "301397180",
+        "301417388",
+        "301539864",
+        "301541572",
+        "301469886",
+        "301568596",
+        "301541657"
+    ];
     const studentNumber = useContext(StudentNumber)
     const { state } = useLocation();
     const [peers, setPeers] = useState([]);
@@ -51,6 +65,9 @@ function Dashboard(props){
             hasVisited={state.hasVisited}
             questionnaireClicked={questionnaireClicked}
         /> :
+        blacklist.includes(state.student_number) ?
+        <h5 className='small-message'>Please see the dashboard in the lab.</h5>
+        :
         <>
          <Card sx={{ minWidth: 250 }} style={{boxShadow: 'none'}}>
            <CardContent>
@@ -106,7 +123,7 @@ function Dashboard(props){
             className='q-button' 
             variant="contained"
             target={state.hasVisited ? '' : "_blank"}
-            href={state.hasVisited ? '/' : state.class == '167' ? 'https://www.surveymonkey.ca/r/G9VWXKQ' : 'https://www.surveymonkey.ca/r/BGBGFN8'}
+            href={state.hasVisited ? '/' : state.class == '167' ? 'https://www.surveymonkey.ca/r/HW8WLMK' : 'https://www.surveymonkey.ca/r/BGBGFN8'}
             onClick={questionnaireClicked}
             >
                 {state.hasVisited ? 'Exit' : 'Take me to questionnaires!'}

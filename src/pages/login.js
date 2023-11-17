@@ -32,6 +32,7 @@ function Login(props){
               "/dashboard", 
               {state: 
                 {
+                  student_number: input,
                   group: res.data.group, 
                   assignment: res.data.assignment_name,
                   you: res.data.your_perf, 
