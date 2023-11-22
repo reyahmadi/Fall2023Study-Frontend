@@ -20,9 +20,7 @@ function Dashboard(props){
         "301604458",
         "301541572",
         "301563520",
-        "301543692",
-        "301457886",
-        "301545941"
+        "301543692"
     ];
     const studentNumber = useContext(StudentNumber)
     const { state } = useLocation();
