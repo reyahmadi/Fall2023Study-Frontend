@@ -18,9 +18,9 @@ import baseURL from '../variables';
 function Dashboard(props){
     const blacklist = [
         "301604458",
-        // "301541572",
+        "301541572",
         "301563520",
-        "301543692"
+        // "301543692"
     ];
     const studentNumber = useContext(StudentNumber)
     const { state } = useLocation();
