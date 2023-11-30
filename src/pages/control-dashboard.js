@@ -53,7 +53,7 @@ function ControlDashboard(props){
                             className='q-button' 
                             variant="contained"
                             target={props.hasVisited ? '' : "_blank"}
-                            href={props.hasVisited ? '/' : props.class == '167' ? 'https://www.surveymonkey.ca/r/HMZSWSL' : 'https://www.surveymonkey.ca/r/BGBGFN8'}
+                            href={props.hasVisited ? '/' : props.class == '167' ? 'https://www.surveymonkey.ca/r/HMZSWSL' : 'https://www.surveymonkey.ca/r/H6VFQLH'}
                             onClick={props.questionnaireClicked}
                             >
                                 {props.hasVisited ? 'Exit' : 'Take me to questionnaires!'}

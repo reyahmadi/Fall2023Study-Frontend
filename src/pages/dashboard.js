@@ -19,8 +19,48 @@ function Dashboard(props){
     const blacklist = [
         "301604458",
         "301541572",
-        // "301563520",
-        // "301543692"
+        "301571436",
+        "301435977",
+        "301540219",
+        "301406223",
+        "301572004",
+        "301540221",
+        "301553411",
+        "301540771",
+        "301541003",
+        "301447490",
+        "301449620",
+        "301326964",
+        "301455052",
+        "301416585",
+        "301466395",
+        "301416648",
+        "301449899",
+        "301474301",
+        "301440038",
+        "301451352",
+        "301416738",
+        "301472621",
+        "301469709",
+        "301462471",
+        "301544396",
+        "301466081",
+        "301449578",
+        "301420725",
+        "301368470",
+        "301416823",
+        "301259909",
+        "301416746",
+        "301417092",
+        "301454667",
+        "301372164",
+        "301367821",
+        "301457324",
+        "301472937",
+        "301416649",
+        "301434299",
+        "301468926"
+        
     ];
     const studentNumber = useContext(StudentNumber)
     const { state } = useLocation();
@@ -116,7 +156,7 @@ function Dashboard(props){
             className='q-button' 
             variant="contained"
             target={state.hasVisited ? '' : "_blank"}
-            href={state.hasVisited ? '/' : state.class == '167' ? 'https://www.surveymonkey.ca/r/HMZSWSL' : 'https://www.surveymonkey.ca/r/BGBGFN8'}
+            href={state.hasVisited ? '/' : state.class == '167' ? 'https://www.surveymonkey.ca/r/HMZSWSL' : 'https://www.surveymonkey.ca/r/H6VFQLH'}
             onClick={questionnaireClicked}
             >
                 {state.hasVisited ? 'Exit' : 'Take me to questionnaires!'}
