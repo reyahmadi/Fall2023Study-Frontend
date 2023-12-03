@@ -17,8 +17,8 @@ import baseURL from '../variables';
 
 function Dashboard(props){
     const blacklist = [
-        "301604458",
-        "301541572",
+        // "301604458",
+        // "301541572",
         "301571436",
         "301435977",
         "301540219",
