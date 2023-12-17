@@ -116,7 +116,7 @@ function Dashboard(props){
             <Grid justifyContent="center" container>
             <Grid item xs={4} md={4} lg={4}>
                 <Typography variant='h5'>
-                    {state.assignment}
+                    {/* {state.assignment} */}
                 </Typography>
             </Grid>
             <Grid item className="grade-card" xs={4} md={4} lg={4}>
