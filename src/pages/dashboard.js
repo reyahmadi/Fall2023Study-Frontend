@@ -106,9 +106,12 @@ function Dashboard(props){
             onChange={handleAlignment}
             aria-label="text alignment"
             >
+            {
+            state.student_number == 301553411 ? '' : 
             <ToggleButton value={2} aria-label="left aligned">
             Assignment 2
             </ToggleButton>
+            }
             <ToggleButton value={3} aria-label="right aligned">
             Assignment 3
             </ToggleButton>
@@ -125,9 +128,15 @@ function Dashboard(props){
                         <Typography gutterBottom>
                             Your Grade
                         </Typography>
-                        <CircularProgressWithLabel value={you?.[assgnmnt - 2]?.grade} />
+                        <CircularProgressWithLabel value={
+                            state.student_number == 301553411 ?
+                            you?.[1]?.grade :  
+                            you?.[assgnmnt - 2]?.grade } />
                         <Typography gutterBottom>
-                            Time spent: <strong className='font-20'>{you?.[assgnmnt - 2]?.time}h</strong>
+                            Time spent: <strong className='font-20'>{
+                                    state.student_number == 301553411 ? 
+                                    you?.[1]?.time : 
+                                    you?.[assgnmnt - 2]?.time}h</strong>
                         </Typography>
                         {/* <CircleRating /> */}
                     </CardContent>
