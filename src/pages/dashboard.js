@@ -72,7 +72,7 @@ function Dashboard(props){
                         <Typography gutterBottom>
                             Your Grade
                         </Typography>
-                        <CircularProgressWithLabel value={you?.grade > 100 ? 100 : you.grade} />
+                        <CircularProgressWithLabel value={you?.grade} />
                         <Typography gutterBottom>
                             Time spent: <strong className='font-20'>{you?.time}h</strong>
                         </Typography>
@@ -97,7 +97,7 @@ function Dashboard(props){
                         <Typography gutterBottom>
                             Student {i+1}
                         </Typography>
-                        <CircularProgressWithLabel value={row.grade > 100 ? 100 : row.grade} />
+                        <CircularProgressWithLabel value={row.grade} />
                         <Typography className='margin-top' gutterBottom>
                             Time spent: <strong className='font-20'>{row?.time}h</strong>
                         </Typography>
