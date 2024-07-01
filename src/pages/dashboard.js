@@ -112,10 +112,10 @@ function Dashboard(props){
             className='q-button' 
             variant="contained"
             target={state.hasVisited ? '' : "_blank"}
-            href={state.hasVisited ? '/' : state.class == '167' ? 'https://www.surveymonkey.ca/r/HMZSWSL' : 'https://www.surveymonkey.ca/r/LRCZFCQ'}
+            href={/*state.hasVisited ? '/' : */state.class == '167' ? 'https://www.surveymonkey.ca/r/HMZSWSL' : 'https://www.surveymonkey.ca/r/LRCZFCQ'}
             onClick={questionnaireClicked}
             >
-                {state.hasVisited ? 'Exit' : 'Take me to questionnaires!'}
+                {/*state.hasVisited ? 'Exit' : */'Take me to questionnaires!'}
             </Button>
             {/* </Grid>
             </Grid> */}
