@@ -107,11 +107,12 @@ export default function Dashboard(props){
             aria-label="text alignment"
             >
             <ToggleButton value={2} aria-label="left aligned">
-            Assignment 2
+            {state.class == "265" ? "Assignment 2" : "Game 1"}
             </ToggleButton>
+            {state.class == "265" ?
             <ToggleButton value={3} aria-label="right aligned">
             Assignment 3
-            </ToggleButton>
+            </ToggleButton> : ""}
             </ToggleButtonGroup>
             <Grid justifyContent="center" container>
             <Grid item xs={4} md={4} lg={4}>
